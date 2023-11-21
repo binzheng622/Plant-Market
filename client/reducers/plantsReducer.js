@@ -18,3 +18,7 @@ const plantSlice = createSlice({
   initialState,
   reducers: {},
 });
+
+export const {} = plantSlice.actions;
+
+export default plantSlice.reducer;

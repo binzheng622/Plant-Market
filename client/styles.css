@@ -76,7 +76,7 @@ body {
   height: 100vh;
 }
 
-/* Nav BAR */
+/* Nav Bar */
 .NavBar {
   display: flex;
   justify-content: space-between;
@@ -150,4 +150,63 @@ body {
   font-size: 1.25em;
   font-weight: bold;
   color: green;
+}
+
+/* Plant Market */
+.PlantMarket {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2em;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 30px;
+  margin: 20px 30px;
+  background-color: rgba(255, 255, 255, 0.65);
+}
+
+/* Plant Card */
+.outerCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  width: 18em;
+  height: 26em;
+  margin: 30px;
+  background-color: #ffd979;
+}
+
+.PlantCard {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  border: none;
+  border-radius: 10px;
+  width: 16em;
+  height: 24em;
+  background-color: #a8d59b;
+}
+
+.plantCardName {
+  margin: 12px 0px 5px 22px;
+}
+
+.plantCardImg {
+  align-self: center;
+  height: 8em;
+  border: 1px solid black;
+  width: 13em;
+  height: 10em;
+}
+
+.plantCardTitle {
+  margin: 50px 0px 5px 22px;
+  font-weight: 900;
+}
+
+.plantCardInfo {
+  margin-left: 10px;
+  font-weight: 300;
 }

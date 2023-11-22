@@ -21,6 +21,11 @@ app.get('/data/:id', plantController.syncInfo, (req, res) =>
   res.status(200).json(res.locals.userInfo)
 );
 
+//delete plant from user plant list
+app.delete('/plant/:plantid', plantController.deletePlant, (req, res) =>
+  res.status(200).redirect(`/${res.locals.userID}`)
+);
+
 //personal page add plant to personal plantlist in database
 app.post('/:id', plantController.addPlant, (req, res) =>
   res.status(200).redirect(`/${res.locals.userID}`)

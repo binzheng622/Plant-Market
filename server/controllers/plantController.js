@@ -138,6 +138,31 @@ plantController.addPlant = async (req, res, next) => {
   }
 };
 
+//delete plant from user database
+plantController.deletePlant = async (req, res, next) => {
+  try {
+    const plantID = [req.params.plantid];
+    const findPlant = 'SELECT * FROM plants WHERE id = $1';
+    const deletePlant = 'DELETE FROM plants WHERE id = $1';
+
+    //find plant owner for redirect
+    const findUser = await db.query(findPlant, plantID);
+    res.locals.userID = findUser.rows[0].plantownerid;
+
+    //delete plant from database
+    const result = await db.query(deletePlant, plantID);
+
+    //send user back to personal page
+    return next();
+  } catch (err) {
+    return next({
+      log: `plantController.deletePlant ERROR: ${err}`,
+      status: 500,
+      message: { err: 'Unable to delete plant' },
+    });
+  }
+};
+
 //sync user data based on userid
 plantController.syncInfo = async (req, res, next) => {
   try {

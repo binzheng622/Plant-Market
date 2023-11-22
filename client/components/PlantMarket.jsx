@@ -10,6 +10,7 @@ const PlantMarket = () => {
     plantCards.push(
       <PlantCard
         key={plant.id}
+        plantId={plant.id}
         plantName={plant.plantname}
         image={plant.imageurl}
         sunInfo={plant.plantsun}

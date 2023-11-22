@@ -1,7 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const NavBar = ({ userId }) => {
+  const navigate = useNavigate();
+  function logOut() {
+    navigate('/');
+  }
+
   const username = useSelector((state) => state.plants.username);
 
   return (
@@ -25,7 +31,9 @@ const NavBar = ({ userId }) => {
           />
         </button>
       </form>
-      <p className='profileName'>{username}</p>
+      <button className='profileName' onClick={logOut}>
+        {username}
+      </button>
     </div>
   );
 };

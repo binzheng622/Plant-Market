@@ -1,6 +1,9 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-const NavBar = ({ username, userId }) => {
+const NavBar = ({ userId }) => {
+  const username = useSelector((state) => state.plants.username);
+
   return (
     <div className='NavBar'>
       <img
@@ -22,7 +25,6 @@ const NavBar = ({ username, userId }) => {
           />
         </button>
       </form>
-
       <p className='profileName'>{username}</p>
     </div>
   );

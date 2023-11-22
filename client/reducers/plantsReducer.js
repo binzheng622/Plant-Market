@@ -8,9 +8,16 @@ const initialState = {
 const plantSlice = createSlice({
   name: 'plant',
   initialState,
-  reducers: {},
+  reducers: {
+    syncData: (state, action) => {
+      state.username = action.payload.username;
+
+      state.plantList = state.plantList.slice();
+      state.plantList = action.payload.plantList;
+    },
+  },
 });
 
-export const {} = plantSlice.actions;
+export const { syncData } = plantSlice.actions;
 
 export default plantSlice.reducer;

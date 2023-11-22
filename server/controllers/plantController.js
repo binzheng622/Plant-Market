@@ -141,7 +141,7 @@ plantController.addPlant = async (req, res, next) => {
 //sync user data based on userid
 plantController.syncInfo = async (req, res, next) => {
   try {
-    const userID = [res.locals.userID];
+    const userID = [req.params.id];
     const userName = 'SELECT * FROM users WHERE id = $1';
     const plantData = 'SELECT * FROM plants WHERE plantownerid = $1';
     //find username and user plantlist

@@ -1,0 +1,153 @@
+body {
+  margin: 0px;
+}
+
+/* SignUp Page */
+.signupContainer {
+  display: flex;
+  justify-content: center;
+  background-image: url('https://images.rawpixel.com/image_1100/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3dvcmxkZmFjZXNsYWJfc2NlbmVfb2ZfM2RfaWxsdXN0cmF0aW9uX29mX2dhcmRlbl9udXJzZXJ5X19pbmRvb185Y2M5Y2FkZC0zN2YxLTQ1NzktODI5ZS03NzcwNmVmYTNjOTlfMS5qcGc.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  width: 25em;
+  height: 18em;
+  margin-top: 30em;
+  gap: 0.5em;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.signup {
+  height: 3em;
+  width: 20em;
+  text-align: center;
+}
+
+.button {
+  background-color: rgb(101, 163, 8);
+  border: 1px solid green;
+  margin-top: 1em;
+}
+
+/* Login Page */
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  background-image: url('https://images.rawpixel.com/image_1100/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3dvcmxkZmFjZXNsYWJfc2NlbmVfb2ZfM2RfaWxsdXN0cmF0aW9uX29mX2dhcmRlbl9udXJzZXJ5X19pbmRvb185Y2M5Y2FkZC0zN2YxLTQ1NzktODI5ZS03NzcwNmVmYTNjOTlfMS5qcGc.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  width: 25em;
+  height: 15em;
+  margin-top: 30em;
+  gap: 0.5em;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.login {
+  height: 3em;
+  width: 20em;
+  text-align: center;
+}
+
+/* Main Page */
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  background-image: url('https://images.rawpixel.com/image_1100/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3dvcmxkZmFjZXNsYWJfc2NlbmVfb2ZfM2RfaWxsdXN0cmF0aW9uX29mX2dhcmRlbl9udXJzZXJ5X19pbmRvb185Y2M5Y2FkZC0zN2YxLTQ1NzktODI5ZS03NzcwNmVmYTNjOTlfMS5qcGc.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* Nav BAR */
+.NavBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 30px;
+  margin: 10px 30px;
+  background-color: rgba(255, 255, 255, 0.65);
+}
+
+/* Logo Moving */
+.logo {
+  padding-right: 100px;
+  height: 60px;
+  transform: scaleX(-1);
+  position: relative;
+  animation: mymove 5s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes mymove {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 500px;
+  }
+}
+
+/* Plant Search */
+.plantForm {
+  display: flex;
+  padding: 5px;
+  gap: 10px;
+  border: none;
+  border-radius: 30px;
+}
+
+.plantForm:hover {
+  box-shadow: 0px 0px 5px 2px #1eb248;
+}
+
+/* Plant SearchBar */
+.plantName {
+  font-size: 20px;
+  padding: 5px;
+  text-align: center;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.plantName:focus {
+  outline: none;
+}
+
+/* Plant Search Button */
+.findPlant {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  padding-right: 50px;
+}
+
+.glass {
+  height: 25px;
+}
+
+/* Profile Name */
+.profileName {
+  padding-right: 100px;
+  margin: 0px;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: green;
+}

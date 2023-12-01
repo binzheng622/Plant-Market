@@ -1,7 +1,5 @@
 const db = require('../models/userModel');
 const bcrypt = require('bcrypt');
-// const fetch = require('node-fetch');
-// require('dotenv').config();
 
 const plantController = {};
 
@@ -29,6 +27,7 @@ plantController.createUser = async (req, res, next) => {
         'INSERT INTO users (username, email, password) VALUES ($1, $2, $3)';
 
       const addUser = await db.query(createUser, userInfo);
+
       //send user to login page
       return next();
     } else {
@@ -62,6 +61,7 @@ plantController.checkUser = async (req, res, next) => {
       //if password is a match
       if (hashMatch) {
         res.locals.userID = result.rows[0].id;
+
         //send user to personal page
         return next();
       } else {
@@ -142,12 +142,7 @@ plantController.addPlant = async (req, res, next) => {
 plantController.deletePlant = async (req, res, next) => {
   try {
     const plantID = [req.params.plantid];
-    const findPlant = 'SELECT * FROM plants WHERE id = $1';
     const deletePlant = 'DELETE FROM plants WHERE id = $1';
-
-    //find plant owner for redirect
-    const findUser = await db.query(findPlant, plantID);
-    res.locals.userID = findUser.rows[0].plantownerid;
 
     //delete plant from database
     const result = await db.query(deletePlant, plantID);
@@ -169,6 +164,7 @@ plantController.syncInfo = async (req, res, next) => {
     const userID = [req.params.id];
     const userName = 'SELECT * FROM users WHERE id = $1';
     const plantData = 'SELECT * FROM plants WHERE plantownerid = $1';
+
     //find username and user plantlist
     const userResult = await db.query(userName, userID);
     const plantResult = await db.query(plantData, userID);
@@ -178,6 +174,7 @@ plantController.syncInfo = async (req, res, next) => {
       username: userResult.rows[0].username,
       plantList: plantResult.rows,
     };
+
     //send user back to personal page
     return next();
   } catch (err) {

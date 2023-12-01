@@ -11,7 +11,7 @@ const NavBar = ({ userId }) => {
   const username = useSelector((state) => state.plants.username);
 
   return (
-    <div className='NavBar'>
+    <div className='navBar'>
       <img
         className='logo'
         src='https://assets.pokemon.com/assets/cms2/img/pokedex/full/492.png'

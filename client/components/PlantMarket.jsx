@@ -19,7 +19,7 @@ const PlantMarket = () => {
     );
   });
 
-  return <div className='PlantMarket'>{plantCards}</div>;
+  return <div className='plantMarket'>{plantCards}</div>;
 };
 
 export default PlantMarket;

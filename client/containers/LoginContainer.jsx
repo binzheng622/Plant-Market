@@ -9,7 +9,7 @@ const LoginContainer = () => {
 
   return (
     <div className='loginContainer'>
-      <form className='loginForm' method='POST' action='/'>
+      <form className='loginForm' method='POST' action='/login'>
         <input name='email' className='login email' placeholder='Email' />
         <input
           name='password'

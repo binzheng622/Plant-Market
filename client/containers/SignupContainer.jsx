@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LoginContainer = () => {
+const SignupContainer = () => {
   return (
     <div className='signupContainer'>
       <form className='signupForm' method='POST' action='/signup'>
@@ -22,4 +22,4 @@ const LoginContainer = () => {
   );
 };
 
-export default LoginContainer;
+export default SignupContainer;

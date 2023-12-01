@@ -17,7 +17,7 @@ const PlantCard = ({ plantId, plantName, image, sunInfo, waterInfo }) => {
 
   return (
     <div className='outerCard'>
-      <div className='PlantCard'>
+      <div className='plantCard'>
         <div className='plantCardHead'>
           <h3 className='plantCardName'>{plantName}</h3>
           <button className='plantCardButton' onClick={deletePlant}>

@@ -83,7 +83,7 @@ body {
 }
 
 /* Nav Bar */
-.NavBar {
+.navBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -173,7 +173,7 @@ body {
 }
 
 /* Plant Market */
-.PlantMarket {
+.plantMarket {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -203,7 +203,7 @@ body {
   border: none;
 }
 
-.PlantCard {
+.plantCard {
   display: flex;
   flex-direction: column;
   align-items: start;

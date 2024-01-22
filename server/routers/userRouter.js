@@ -6,7 +6,7 @@ const router = express.Router();
 
 //create user in database
 router.post('/signup', plantController.createUser, (req, res) => {
-  return res.status(200).json('Added');
+  return res.status(200).json({ status: 'added' });
 });
 
 //login user and sync their data

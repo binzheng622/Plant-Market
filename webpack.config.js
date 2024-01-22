@@ -6,7 +6,7 @@ module.exports = {
   mode: process.env.NODE_ENV,
   //index.js file location
   entry: {
-    src: './client/index.js',
+    src: './client/index.tsx',
   },
   //where to save final build files
   output: {
@@ -24,6 +24,12 @@ module.exports = {
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },
       },
+      //use for ts & tsx files
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: 'ts-loader',
+      },
       //use for css files
       {
         test: /\.css/,
@@ -35,6 +41,9 @@ module.exports = {
         loader: 'file-loader',
       },
     ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
   plugins: [
     //use to load react components

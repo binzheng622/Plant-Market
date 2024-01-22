@@ -9,7 +9,9 @@ const userRouter = require('./routers/userRouter');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/', userRouter);
+app.use(express.static(process.cwd() + '/build'));
+
+app.use('/api', userRouter);
 
 //wrong page error 404
 app.use((req, res) => res.status(404).send('Page Not Found'));
@@ -30,5 +32,3 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}...`);
 });
-
-module.exports = app;

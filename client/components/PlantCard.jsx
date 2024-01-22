@@ -1,19 +1,25 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { syncData } from '../reducers/plantsReducer.js';
 
 const PlantCard = ({ plantId, plantName, image, sunInfo, waterInfo }) => {
-  function deletePlant() {
-    fetch(`/plant/${plantId}`, {
+  const dispatch = useDispatch();
+  const userId = useSelector((state) => state.plants.id);
+
+  const deletePlant = () => {
+    fetch(`/api/plant/${plantId}`, {
       method: 'DELETE',
+      body: JSON.stringify({ userId }),
+      headers: { 'Content-Type': 'application/json' },
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        dispatch(syncData(data));
       })
       .catch((err) => {
         console.log(err);
       });
-    window.location.reload();
-  }
+  };
 
   return (
     <div className='outerCard'>

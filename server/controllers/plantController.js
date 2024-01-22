@@ -28,11 +28,10 @@ plantController.createUser = async (req, res, next) => {
 
       const addUser = await db.query(createUser, userInfo);
 
-      //send user to login page
       return next();
     } else {
-      //if user input incorrect, sent to signup page
-      return res.status(400).redirect('/signup');
+      //if user input incorrect
+      return res.sendStatus(400);
     }
   } catch (err) {
     return next({
@@ -65,12 +64,12 @@ plantController.checkUser = async (req, res, next) => {
         //send user to personal page
         return next();
       } else {
-        //if password dont match, send to signup page
-        return res.status(400).redirect('/signup');
+        //if password dont match
+        return res.sendStatus(400);
       }
     } else {
-      //if user not found, send to signup page
-      return res.status(400).redirect('/signup');
+      //if user not found
+      return res.sendStatus(400);
     }
   } catch (err) {
     return next({
@@ -123,11 +122,11 @@ plantController.addPlant = async (req, res, next) => {
         return next();
         //could not find user plant name in API database
       } else {
-        return res.status(400).redirect(`/${userID}`);
+        return res.sendStatus(400);
       }
       //user did not put any name
     } else {
-      return res.status(400).redirect(`/${userID}`);
+      return res.sendStatus(400);
     }
   } catch (err) {
     return next({
@@ -141,11 +140,13 @@ plantController.addPlant = async (req, res, next) => {
 //delete plant from user database
 plantController.deletePlant = async (req, res, next) => {
   try {
+    const { userId } = req.body;
     const plantID = [req.params.plantid];
     const deletePlant = 'DELETE FROM plants WHERE id = $1';
 
     //delete plant from database
     const result = await db.query(deletePlant, plantID);
+    res.locals.userID = userId;
 
     //send user back to personal page
     return next();
@@ -161,7 +162,7 @@ plantController.deletePlant = async (req, res, next) => {
 //sync user data based on userid
 plantController.syncInfo = async (req, res, next) => {
   try {
-    const userID = [req.params.id];
+    const userID = [res.locals.userID];
     const userName = 'SELECT * FROM users WHERE id = $1';
     const plantData = 'SELECT * FROM plants WHERE plantownerid = $1';
 
@@ -171,6 +172,7 @@ plantController.syncInfo = async (req, res, next) => {
 
     //save userinfo to be sent to store
     res.locals.userInfo = {
+      id: res.locals.userID,
       username: userResult.rows[0].username,
       plantList: plantResult.rows,
     };

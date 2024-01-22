@@ -1,27 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { syncData } from '../reducers/plantsReducer.js';
 
 const LoginContainer = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  function signUp() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const goMain = () => {
+    navigate('/main');
+  };
+
+  const goSignUp = () => {
     navigate('/signup');
-  }
+  };
+
+  const login = () => {
+    fetch('/api/login', {
+      method: 'POST',
+      body: JSON.stringify({ email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch(syncData(data));
+        goMain();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className='loginContainer'>
-      <form className='loginForm' method='POST' action='/login'>
-        <input name='email' className='login email' placeholder='Email' />
+      <div className='loginForm'>
         <input
-          name='password'
+          className='login email'
+          placeholder='Email'
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+        <input
           type='password'
           className='login password'
           placeholder='Password'
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
         />
-        <button className='login button'>Login</button>
-        <button className='signLog button' onClick={signUp}>
+        <button className='login button' onClick={login}>
+          Login
+        </button>
+        <button className='signLog button' onClick={goSignUp}>
           SignUp
         </button>
-      </form>
+      </div>
     </div>
   );
 };

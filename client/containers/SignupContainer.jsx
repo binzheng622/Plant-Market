@@ -1,23 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SignupContainer = () => {
+  const navigate = useNavigate();
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const goLogin = () => {
+    navigate('/');
+  };
+
+  const signUp = () => {
+    fetch('/api/signup', {
+      method: 'POST',
+      body: JSON.stringify({ username, email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        goLogin();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className='signupContainer'>
-      <form className='signupForm' method='POST' action='/signup'>
+      <div className='signupForm'>
         <input
-          name='username'
           className='signup username'
           placeholder='Username'
+          onChange={(e) => {
+            setUsername(e.target.value);
+          }}
         />
-        <input name='email' className='signup email' placeholder='Email' />
         <input
-          name='password'
+          className='signup email'
+          placeholder='Email'
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+        <input
           type='password'
           className='signup password'
           placeholder='Password'
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
         />
-        <button className='signup button'>Sign Up</button>
-      </form>
+        <button className='signup button' onClick={signUp}>
+          Sign Up
+        </button>
+      </div>
     </div>
   );
 };

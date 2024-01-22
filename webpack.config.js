@@ -45,7 +45,7 @@ module.exports = {
     },
     //send all request to backend
     proxy: {
-      '/': 'http://localhost:3000',
+      '/api': 'http://localhost:3000',
     },
     //use to load react components with react router
     historyApiFallback: true,

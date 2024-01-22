@@ -11,7 +11,7 @@ const App = () => {
       element: <LoginContainer />,
     },
     { path: '/signup', element: <SignupContainer /> },
-    { path: '/:id', element: <MainContainer /> },
+    { path: '/main', element: <MainContainer /> },
   ]);
 
   return (

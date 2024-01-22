@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
+  id: 0,
   username: '',
   plantList: [],
 };
@@ -10,6 +11,8 @@ const plantSlice = createSlice({
   initialState,
   reducers: {
     syncData: (state, action) => {
+      state.id = action.payload.id;
+
       state.username = action.payload.username;
 
       state.plantList = state.plantList.slice();

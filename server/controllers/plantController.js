@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 const plantController = {};
 
-//create user
+//create user in database
 plantController.createUser = async (req, res, next) => {
   const { username, email, password } = req.body;
   try {
@@ -13,7 +13,7 @@ plantController.createUser = async (req, res, next) => {
     //check if email is already in database
     const result = await db.query(findUser, userEmail);
 
-    //if user input all data and email is not in database
+    //if user input data and email is not in database
     if (
       username.length &&
       email.length &&
@@ -30,7 +30,7 @@ plantController.createUser = async (req, res, next) => {
 
       return next();
     } else {
-      //if user input incorrect
+      //if user input incorrect data
       return res.sendStatus(400);
     }
   } catch (err) {
@@ -42,7 +42,7 @@ plantController.createUser = async (req, res, next) => {
   }
 };
 
-//check user
+//check user login
 plantController.checkUser = async (req, res, next) => {
   const { email, password } = req.body;
   try {
@@ -68,7 +68,7 @@ plantController.checkUser = async (req, res, next) => {
         return res.sendStatus(400);
       }
     } else {
-      //if user not found
+      //if user not found in database
       return res.sendStatus(400);
     }
   } catch (err) {
@@ -159,7 +159,7 @@ plantController.deletePlant = async (req, res, next) => {
   }
 };
 
-//sync user data based on userid
+//sync/resync user data based on userid
 plantController.syncInfo = async (req, res, next) => {
   try {
     const userID = [res.locals.userID];
@@ -170,7 +170,7 @@ plantController.syncInfo = async (req, res, next) => {
     const userResult = await db.query(userName, userID);
     const plantResult = await db.query(plantData, userID);
 
-    //save userinfo to be sent to store
+    //save userinfo to be sent to redux store
     res.locals.userInfo = {
       id: res.locals.userID,
       username: userResult.rows[0].username,

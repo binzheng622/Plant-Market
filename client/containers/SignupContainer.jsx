@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Background from '../assets/background.png';
 
 const SignupContainer = () => {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ const SignupContainer = () => {
     navigate('/');
   };
 
+  //store user info in database
   const signUp = () => {
     fetch('/api/signup', {
       method: 'POST',
@@ -27,11 +29,15 @@ const SignupContainer = () => {
   };
 
   return (
-    <div className='signupContainer'>
+    <div
+      className='signupContainer'
+      style={{ backgroundImage: `url(${Background})` }}
+    >
       <div className='signupForm'>
         <input
           className='signup username'
           placeholder='Username'
+          value={username}
           onChange={(e) => {
             setUsername(e.target.value);
           }}
@@ -39,6 +45,7 @@ const SignupContainer = () => {
         <input
           className='signup email'
           placeholder='Email'
+          value={email}
           onChange={(e) => {
             setEmail(e.target.value);
           }}
@@ -47,6 +54,7 @@ const SignupContainer = () => {
           type='password'
           className='signup password'
           placeholder='Password'
+          value={password}
           onChange={(e) => {
             setPassword(e.target.value);
           }}

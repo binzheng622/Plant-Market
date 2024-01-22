@@ -6,6 +6,7 @@ const PlantCard = ({ plantId, plantName, image, sunInfo, waterInfo }) => {
   const dispatch = useDispatch();
   const userId = useSelector((state) => state.plants.id);
 
+  //delete plant from user's plant database and resync data
   const deletePlant = () => {
     fetch(`/api/plant/${plantId}`, {
       method: 'DELETE',

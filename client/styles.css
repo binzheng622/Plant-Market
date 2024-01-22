@@ -6,7 +6,6 @@ body {
 .signupContainer {
   display: flex;
   justify-content: center;
-  background-image: url('https://images.rawpixel.com/image_1100/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3dvcmxkZmFjZXNsYWJfc2NlbmVfb2ZfM2RfaWxsdXN0cmF0aW9uX29mX2dhcmRlbl9udXJzZXJ5X19pbmRvb185Y2M5Y2FkZC0zN2YxLTQ1NzktODI5ZS03NzcwNmVmYTNjOTlfMS5qcGc.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -41,7 +40,6 @@ body {
 .loginContainer {
   display: flex;
   justify-content: center;
-  background-image: url('https://images.rawpixel.com/image_1100/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3dvcmxkZmFjZXNsYWJfc2NlbmVfb2ZfM2RfaWxsdXN0cmF0aW9uX29mX2dhcmRlbl9udXJzZXJ5X19pbmRvb185Y2M5Y2FkZC0zN2YxLTQ1NzktODI5ZS03NzcwNmVmYTNjOTlfMS5qcGc.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -76,7 +74,6 @@ body {
 .mainContainer {
   display: flex;
   flex-direction: column;
-  background-image: url('https://images.rawpixel.com/image_1100/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3dvcmxkZmFjZXNsYWJfc2NlbmVfb2ZfM2RfaWxsdXN0cmF0aW9uX29mX2dhcmRlbl9udXJzZXJ5X19pbmRvb185Y2M5Y2FkZC0zN2YxLTQ1NzktODI5ZS03NzcwNmVmYTNjOTlfMS5qcGc.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;

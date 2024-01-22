@@ -10,6 +10,7 @@ const plantSlice = createSlice({
   name: 'plant',
   initialState,
   reducers: {
+    //update user info from database to redux store
     syncData: (state, action) => {
       state.id = action.payload.id;
 

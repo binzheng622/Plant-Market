@@ -15,6 +15,7 @@ const NavBar = () => {
     navigate('/');
   };
 
+  //add plant to user's plant database and resync data
   const addPlant = () => {
     fetch(`/api/${userId}`, {
       method: 'POST',
@@ -24,6 +25,7 @@ const NavBar = () => {
       .then((response) => response.json())
       .then((data) => {
         dispatch(syncData(data));
+        setPlantName('');
       })
       .catch((err) => {
         console.log(err);
@@ -41,6 +43,7 @@ const NavBar = () => {
         <input
           className='plantName'
           placeholder='Find Your Plant!'
+          value={plantName}
           onChange={(e) => {
             setPlantName(e.target.value);
           }}

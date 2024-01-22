@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { syncData } from '../reducers/plantsReducer.js';
+import Background from '../assets/background.png';
 
 const LoginContainer = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ const LoginContainer = () => {
     navigate('/signup');
   };
 
+  //check if user is in database and sync data
   const login = () => {
     fetch('/api/login', {
       method: 'POST',
@@ -34,11 +36,15 @@ const LoginContainer = () => {
   };
 
   return (
-    <div className='loginContainer'>
+    <div
+      className='loginContainer'
+      style={{ backgroundImage: `url(${Background})` }}
+    >
       <div className='loginForm'>
         <input
           className='login email'
           placeholder='Email'
+          value={email}
           onChange={(e) => {
             setEmail(e.target.value);
           }}
@@ -47,6 +53,7 @@ const LoginContainer = () => {
           type='password'
           className='login password'
           placeholder='Password'
+          value={password}
           onChange={(e) => {
             setPassword(e.target.value);
           }}

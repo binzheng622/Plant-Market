@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: process.env.NODE_ENV,
@@ -28,6 +29,11 @@ module.exports = {
         test: /\.css/,
         use: ['style-loader', 'css-loader'],
       },
+      //use for image files
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+      },
     ],
   },
   plugins: [
@@ -35,6 +41,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Development',
       template: './client/index.html',
+    }),
+    //seperate css file durring bundle
+    new CopyPlugin({
+      patterns: [{ from: './client/styles.css' }],
     }),
   ],
   devServer: {

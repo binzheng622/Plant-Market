@@ -5,6 +5,7 @@ import PlantCard from './PlantCard.jsx';
 const PlantMarket = () => {
   const plantList = useSelector((state) => state.plants.plantList);
 
+  //create a plant card for each plant
   let plantCards = [];
   plantList.forEach((plant) => {
     plantCards.push(

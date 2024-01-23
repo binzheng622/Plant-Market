@@ -1,20 +1,23 @@
-const express = require('express');
-
-const plantController = require('../controllers/plantController');
+import express, { Request, Response } from 'express';
+import plantController from '../controllers/plantController.js';
 
 const router = express.Router();
 
 //create user in database
-router.post('/signup', plantController.createUser, (req, res) => {
-  return res.status(200).json({ status: 'added' });
-});
+router.post(
+  '/signup',
+  plantController.createUser,
+  (req: Request, res: Response) => {
+    return res.status(200).json({ status: 'added' });
+  }
+);
 
 //login user and sync their data
 router.post(
   '/login',
   plantController.checkUser,
   plantController.syncInfo,
-  (req, res) => {
+  (req: Request, res: Response) => {
     return res.status(200).json(res.locals.userInfo);
   }
 );
@@ -24,7 +27,7 @@ router.post(
   '/:id',
   plantController.addPlant,
   plantController.syncInfo,
-  (req, res) => {
+  (req: Request, res: Response) => {
     return res.status(200).json(res.locals.userInfo);
   }
 );
@@ -34,9 +37,9 @@ router.delete(
   '/plant/:plantid',
   plantController.deletePlant,
   plantController.syncInfo,
-  (req, res) => {
+  (req: Request, res: Response) => {
     return res.status(200).json(res.locals.userInfo);
   }
 );
 
-module.exports = router;
+export default router;

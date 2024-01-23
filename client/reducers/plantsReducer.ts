@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
+const initialState: any = {
   id: 0,
   username: '',
   plantList: [],

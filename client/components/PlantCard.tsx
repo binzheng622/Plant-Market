@@ -1,10 +1,22 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { syncData } from '../reducers/plantsReducer.js';
+import { syncData } from '../reducers/plantsReducer';
 
-const PlantCard = ({ plantId, plantName, image, sunInfo, waterInfo }) => {
+const PlantCard = ({
+  plantId,
+  plantName,
+  image,
+  sunInfo,
+  waterInfo,
+}: {
+  plantId: string;
+  plantName: string;
+  image: string;
+  sunInfo: string;
+  waterInfo: string;
+}) => {
   const dispatch = useDispatch();
-  const userId = useSelector((state) => state.plants.id);
+  const userId: number = useSelector((state: any) => state.plants.id);
 
   //delete plant from user's plant database and resync data
   const deletePlant = () => {

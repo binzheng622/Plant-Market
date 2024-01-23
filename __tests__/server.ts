@@ -1,4 +1,4 @@
-const request = require('supertest');
+import request from 'supertest';
 const server = 'http://localhost:3000';
 
 describe('Server Endpoints', () => {

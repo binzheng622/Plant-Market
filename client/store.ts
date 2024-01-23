@@ -1,11 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import plantsReducer from './reducers/plantsReducer.js';
+import plantsReducer from './reducers/plantsReducer';
 
 //redux store setup
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     plants: plantsReducer,
   },
 });
-
-export default store;

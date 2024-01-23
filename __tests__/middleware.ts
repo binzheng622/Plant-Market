@@ -1,10 +1,10 @@
-const controller = require('../server/controllers/plantController.js');
+import controller from '../server/controllers/plantController.js';
 
 jest.setTimeout(60000); // 60 sec before timeout
 
 describe('Middleware Tests', () => {
-  const req = { params: { id: '25', plantid: '100' } };
-  const res = { locals: {} };
+  const req: any = { params: { id: '25', plantid: '100' } };
+  const res: any = { locals: {} };
   const next = jest.fn(); // Jest mock function
 
   describe('plantController middleware', () => {

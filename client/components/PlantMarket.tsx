@@ -1,13 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import PlantCard from './PlantCard.jsx';
+import PlantCard from './PlantCard';
 
 const PlantMarket = () => {
-  const plantList = useSelector((state) => state.plants.plantList);
+  const plantList = useSelector((state: any) => state.plants.plantList);
 
   //create a plant card for each plant
-  let plantCards = [];
-  plantList.forEach((plant) => {
+  let plantCards: JSX.Element[] = [];
+  plantList.forEach((plant: any) => {
     plantCards.push(
       <PlantCard
         key={plant.id}

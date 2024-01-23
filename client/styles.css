@@ -1,5 +1,5 @@
 body {
-  margin: 0px;
+  margin: 0em;
 }
 
 /* SignUp Page */
@@ -18,7 +18,7 @@ body {
   height: 18em;
   margin-top: 30em;
   gap: 0.5em;
-  border: 1px solid black;
+  border: 0.1em solid black;
   justify-content: center;
   align-items: center;
   background: rgba(255, 255, 255, 0.5);
@@ -32,7 +32,7 @@ body {
 
 .button {
   background-color: rgb(101, 163, 8);
-  border: 1px solid green;
+  border: 0.1em solid green;
   margin-top: 1em;
 }
 
@@ -52,7 +52,7 @@ body {
   height: 17em;
   margin-top: 30em;
   gap: 0.5em;
-  border: 1px solid black;
+  border: 0.1em solid black;
   justify-content: center;
   align-items: center;
   background: rgba(255, 255, 255, 0.5);
@@ -84,16 +84,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
-  border-radius: 30px;
-  margin: 10px 30px;
+  border: 0.1em solid black;
+  border-radius: 2em;
+  margin: 0.6em 2em;
   background-color: rgba(255, 255, 255, 0.65);
 }
 
 /* Logo Moving */
 .logo {
-  padding-right: 100px;
-  height: 60px;
+  padding-right: 6.25em;
+  height: 3.75em;
   transform: scaleX(-1);
   position: relative;
   animation: mymove 5s infinite;
@@ -102,30 +102,30 @@ body {
 
 @keyframes mymove {
   from {
-    left: 0px;
+    left: 0em;
   }
   to {
-    left: 500px;
+    left: 31em;
   }
 }
 
 /* Plant Search */
 .plantForm {
   display: flex;
-  padding: 2px;
-  gap: 10px;
+  padding: 0.1em;
+  gap: 0.6em;
   border: none;
-  border-radius: 30px;
+  border-radius: 2em;
 }
 
 .plantForm:hover {
-  box-shadow: 0px 0px 10px green;
+  box-shadow: 0em 0em 0.6em green;
 }
 
 /* Plant SearchBar */
 .plantName {
-  font-size: 20px;
-  padding: 5px;
+  font-size: 1.25em;
+  padding: 0.3em;
   text-align: center;
   border: none;
   background-color: rgba(255, 255, 255, 0);
@@ -139,46 +139,46 @@ body {
 .findPlant {
   border: none;
   background-color: rgba(255, 255, 255, 0);
-  padding-right: 50px;
+  padding-right: 3em;
 }
 
 .glass {
-  height: 25px;
-  padding: 5px;
+  height: 1.5em;
+  padding: 0.3em;
   border: none;
-  border-radius: 15px;
+  border-radius: 1em;
 }
 
 .glass:hover {
-  box-shadow: 0px 0px 10px gray;
+  box-shadow: 0em 0em 0.6em gray;
 }
 
 /* Profile Name */
 .profileName {
-  margin-right: 100px;
-  padding: 8px;
+  margin-right: 6.25em;
+  padding: 0.5em;
   font-size: 1.25em;
   font-weight: bold;
   color: green;
   background-color: rgba(255, 255, 255, 0);
   border: none;
-  border-radius: 20px;
+  border-radius: 1.25em;
 }
 
 .profileName:hover {
-  box-shadow: 0px 0px 10px green;
+  box-shadow: 0em 0em 0.6em green;
 }
 
 /* Plant Market */
 .plantMarket {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(17.5em, 1fr));
   gap: 2em;
   height: 89%;
-  border: 1px solid black;
-  border-radius: 30px;
-  margin: 20px 30px;
+  border: 0.1em solid black;
+  border-radius: 2em;
+  margin: 1.25em 2em;
   background-color: rgba(255, 255, 255, 0.65);
 }
 
@@ -188,15 +188,15 @@ body {
   justify-content: center;
   align-items: center;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.6em;
   width: 18em;
   height: 26em;
-  margin: 30px;
+  margin: 2em;
   background-color: #ffd979;
 }
 
 .outerCard:hover {
-  box-shadow: 0px 0px 20px grey;
+  box-shadow: 0em 0em 1.2em grey;
   border: none;
 }
 
@@ -205,7 +205,7 @@ body {
   flex-direction: column;
   align-items: start;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.6em;
   width: 16em;
   height: 24em;
   background-color: #a8d59b;
@@ -216,12 +216,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 240px;
+  width: 215em;
   gap: 1em;
 }
 
 .plantCardName {
-  margin: 12px 0px 7px 24px;
+  margin: 0.75em 0em 0.4em 1.5em;
 }
 
 .plantCardButton {
@@ -234,28 +234,28 @@ body {
 }
 
 .deleteCard:hover {
-  box-shadow: 0px 0px 20px red;
+  box-shadow: 0em 0em 1.2em red;
   border: none;
-  border-radius: 15px;
-  padding: 3px;
+  border-radius: 1em;
+  padding: 0.2em;
 }
 
 /* Plant Image */
 .plantCardImg {
   align-self: center;
   height: 8em;
-  border: 1px solid black;
+  border: 0.1em solid black;
   width: 13em;
   height: 10em;
 }
 
 /* Plant Card Info */
 .plantCardTitle {
-  margin: 40px 0px 7px 24px;
+  margin: 2.5em 0em 0.4em 1.5em;
   font-weight: 900;
 }
 
 .plantCardInfo {
-  margin-left: 10px;
+  margin-left: 0.6em;
   font-weight: 300;
 }

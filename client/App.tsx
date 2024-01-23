@@ -1,8 +1,8 @@
 import React from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import LoginContainer from './containers/LoginContainer.jsx';
-import SignupContainer from './containers/SignupContainer.jsx';
-import MainContainer from './containers/MainContainer.jsx';
+import LoginContainer from './containers/LoginContainer';
+import SignupContainer from './containers/SignupContainer';
+import MainContainer from './containers/MainContainer';
 
 const App = () => {
   const router = createBrowserRouter([

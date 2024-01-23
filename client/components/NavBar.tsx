@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { syncData } from '../reducers/plantsReducer.js';
+import { syncData } from '../reducers/plantsReducer';
 
 const NavBar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const userId = useSelector((state) => state.plants.id);
-  const username = useSelector((state) => state.plants.username);
+  const userId: number = useSelector((state: any) => state.plants.id);
+  const username: string = useSelector((state: any) => state.plants.username);
 
   const [plantName, setPlantName] = useState('');
 

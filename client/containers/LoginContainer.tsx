@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { syncData } from '../reducers/plantsReducer.js';
+import { syncData } from '../reducers/plantsReducer';
 import Background from '../assets/background.png';
 
 const LoginContainer = () => {

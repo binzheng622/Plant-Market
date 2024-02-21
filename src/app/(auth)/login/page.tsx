@@ -18,11 +18,14 @@ export default function LoginPage() {
 
   const checkUser = async () => {
     try {
-      const response = await fetch('http://localhost:3000/login/api', {
-        method: 'POST',
-        body: JSON.stringify({ email, password }),
-        headers: { 'Content-Type': 'application/json' },
-      });
+      const response = await fetch(
+        'https://plant-market.vercel.app/login/api',
+        {
+          method: 'POST',
+          body: JSON.stringify({ email, password }),
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
 
       const userData = await response.json();
 

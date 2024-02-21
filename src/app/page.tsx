@@ -10,7 +10,7 @@ export default function MainPage() {
 
   const findPlant = async (plantName: string) => {
     try {
-      const response = await fetch('http://localhost:3000/plants', {
+      const response = await fetch('https://plant-market.vercel.app/plants', {
         method: 'POST',
         body: JSON.stringify({ userId, plantName }),
         headers: { 'Content-Type': 'application/json' },
@@ -30,7 +30,7 @@ export default function MainPage() {
 
   const deletePlant = async (plantId: string) => {
     try {
-      const response = await fetch('http://localhost:3000/plants', {
+      const response = await fetch('https://plant-market.vercel.app/plants', {
         method: 'DELETE',
         body: JSON.stringify({ userId, plantId }),
         headers: { 'Content-Type': 'application/json' },

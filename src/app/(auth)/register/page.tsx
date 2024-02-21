@@ -16,11 +16,14 @@ export default function SignupPage() {
 
   const registerUser = async () => {
     try {
-      const response = await fetch('http://localhost:3000/register/api', {
-        method: 'POST',
-        body: JSON.stringify({ username, email, password }),
-        headers: { 'Content-Type': 'application/json' },
-      });
+      const response = await fetch(
+        'https://plant-market.vercel.app/register/api',
+        {
+          method: 'POST',
+          body: JSON.stringify({ username, email, password }),
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
 
       const userData = await response.json();
 

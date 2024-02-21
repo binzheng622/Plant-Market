@@ -1,0 +1,206 @@
+body {
+  margin: 0em;
+  background: no-repeat url('../../public/background.png');
+  background-size: cover;
+  height: 100vh;
+}
+
+/* Login & SignUp Page */
+.authContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  padding: 2em 4em;
+  margin-top: 30em;
+  gap: 0.5em;
+  border: 0.1em solid black;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.authInput {
+  height: 2.5em;
+  width: 15em;
+  text-align: center;
+}
+
+.authInput:focus {
+  outline: none;
+}
+
+.authButton {
+  padding: 0.7em;
+  min-width: 11em;
+  background-color: rgb(101, 163, 8);
+  border: 0.1em solid green;
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+.linkButton {
+  color: black;
+  padding: 0.5em;
+  min-width: 8em;
+  text-align: center;
+  background-color: rgb(101, 163, 8);
+  border: 0.1em solid green;
+  margin-top: 0.5em;
+  text-decoration: none;
+}
+
+/* Main Page */
+/* Nav Bar */
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  border: 0.1em solid black;
+  border-radius: 2em;
+  margin: 0.6em 2em;
+  padding: 0em 3em;
+  background-color: rgba(255, 255, 255, 0.65);
+}
+
+.logo {
+  transform: scaleX(-1);
+  position: relative;
+  animation: mymove 10s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes mymove {
+  from {
+    left: 0em;
+  }
+  to {
+    left: 30em;
+  }
+}
+
+.plantForm {
+  display: flex;
+  padding: 0.5em 2em;
+  gap: 0.6em;
+  border-radius: 2em;
+}
+
+.plantForm:hover {
+  box-shadow: 0em 0em 0.6em green;
+}
+
+.plantName {
+  font-size: 1.25em;
+  text-align: center;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.plantName:focus {
+  outline: none;
+}
+
+.findPlant {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.findPlant:hover {
+  transform: rotate(90deg);
+}
+
+.profileName {
+  font-size: 1.25em;
+  font-weight: bold;
+  color: green;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.profileName:hover {
+  transform: translateY(-0.2em);
+}
+
+/* Plant Market */
+.plantMarket {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17.5em, 1fr));
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1.5em;
+  margin: 2em;
+  border: 0.1em solid black;
+  border-radius: 2em;
+  background-color: rgba(255, 255, 255, 0.65);
+  height: 91vh;
+}
+
+/* Plant Card */
+.outerCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.6em;
+  margin: 2em;
+  width: 18em;
+  height: 26em;
+  background-color: #ffd979;
+}
+
+.outerCard:hover {
+  box-shadow: 0em 0em 1.2em grey;
+}
+
+.plantCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.6em;
+  width: 16em;
+  height: 24em;
+  background-color: #a8d59b;
+}
+
+.plantCardHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 15em;
+  gap: 1em;
+}
+
+.plantCardName {
+  margin: 0.75em 0em 0.4em 1.5em;
+}
+
+.plantCardButton {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
+
+.deleteCard {
+  height: 1em;
+}
+
+.deleteCard:hover {
+  box-shadow: 0em 0em 1.2em red;
+  border-radius: 1em;
+  padding: 0.2em;
+}
+
+.plantCardImg {
+  align-self: center;
+  border: 0.1em solid black;
+  width: 13em;
+  height: 10em;
+}
+
+.plantCardTitle {
+  margin: 2.5em 0em 0.4em 1.5em;
+  font-weight: 900;
+}
+
+.plantCardInfo {
+  margin-left: 0.6em;
+  font-weight: 300;
+}
